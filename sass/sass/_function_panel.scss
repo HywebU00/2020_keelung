@@ -1,0 +1,180 @@
+// function_panel setting
+.function_panel {
+  margin: .2em 0;
+  padding: .5em 0 .5em;
+  min-height: 35px;
+  text-align: right;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  @include screen('mobile') {
+    margin: .6em 0;
+    padding: .5em 0 .5em;
+  }
+  .adSearch{
+    float: left;
+    .adSearch__btn{
+      a{
+        line-height: 40px;
+        padding: 0 1em 0 2.5em;
+        background: $primaryColor url(../images/basic/icon_search.png) no-repeat 16px center;
+        background-size: 16px;
+        color: #fff;
+        display: block;
+        border-radius: 3px;
+        transition: all .5s;
+        &:hover,&:focus{
+          background: $secondaryColor url(../images/basic/icon_search.png) no-repeat 16px center;
+          background-size: 16px;
+          box-shadow: none;
+        }
+      }
+    }
+    .adSearch__form{
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      top: 143px;
+      padding: 1.5em;
+      background: #e6e6e6 url(../images/servicebg.jpg) no-repeat center top;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+      border-top: 4px solid $primaryColor;
+      display: none;
+      .form_grid{
+        border-top: 0;
+        margin: 0;
+        font-size: 1em;
+        .form_grp{
+          border-bottom: 1px solid #ccc;
+        }
+        .form_title{
+          padding-top: 10px;
+        }
+        .form_content{
+          text-align: left;
+        }
+        .btn_grp{
+          padding-bottom: 0;
+        }
+        .btn-submit{
+        }
+      }
+    }
+  }
+  .share {
+    display: inline-block;
+    vertical-align: top;
+    .shareButton {
+      &:before {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: 60%;
+        top: 20%;
+        left: 20%;
+        background: url(../images/basic/icon_share.png) no-repeat center center  !important;
+        background-size: 16px!important;
+        filter: invert(1);
+      }
+      text-indent:-9999px;
+      &:hover,
+      &:focus {
+        &:before {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+  .function {
+    display: inline-block;
+    vertical-align: top;
+    height: 40px;
+    margin: 0;
+    ul {
+      li {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+        float: left;
+        display: block;
+        margin: 0 .2em;
+        a {
+          display: block;
+          @include box-sizing;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          border-radius: 50%;
+          background: #474747;
+          text-indent: -9999px;
+          position: relative;
+          &:hover,
+          &:focus {
+            background: $primaryColor;
+            color: #FFF;
+            box-shadow: none;
+          }
+          &:before {
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            filter: invert(1);
+          }
+        }
+        &.back {
+          a:before {
+            background: url(../images/basic/icon_back.png) no-repeat center center;
+            background-size: 16px;
+          }
+        }
+        &.print {
+          a:before {
+            background: url(../images/basic/icon_printer.png) no-repeat center center;
+            background-size: 16px;
+          }
+          @include screen('mobile') {
+            display: none;
+          }
+        }
+        &.forward {
+          a:before {
+            background: url(../images/basic/icon_forward.png) no-repeat center center;
+            background-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .publish_time {
+    float: left;
+    min-width: 100px;
+    display: block;
+    margin-top: .6em;
+    color:#666;
+    span{
+      font-size:.938em;
+      @include screen('mobile') {
+        display:none;
+      }
+    }
+    time{
+      font-family:georgia;
+      font-size:1.125em;
+      @include screen('mobile') {
+        font-size:.938em;
+      }
+    }
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      top:.3em;
+      background: url(../images/basic/icon_time.png) no-repeat center center;
+      background-size: 12px;
+    }
+  }
+}

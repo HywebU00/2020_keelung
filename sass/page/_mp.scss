@@ -1,0 +1,1530 @@
+section{
+  padding: 1em 0;
+  >div{
+    z-index: 10;
+  }
+}
+//--區塊標題-------------------------------------------------------------------//
+.block_title{
+  color: $blockTitle;
+  font-size: 1.75em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  span{
+    color: #999;
+    font-size: 0.643em;
+    line-height: 100%;
+    margin-left: 4px;
+    &:before{
+      content: "/";
+      margin-right: 4px;
+    }
+  }
+}
+.more{
+  text-align: center;
+  a{
+    color: #fff;
+    padding: 0 40px;
+    line-height: 42px;
+    font-weight: bold;
+    background: #474747;
+    display: inline-block;
+    position: relative;
+    transition: all .5s;
+    overflow: hidden;
+    &:after{
+      content: "";
+      margin: 0 -40px;
+      display: block;
+      background: $moreHover;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 0;
+      transition: all .5s;
+      z-index: 9;
+    }
+    &:before{
+      content: "";
+      width: 12px;
+      height: 12px;
+      border: 2px solid #FFF;
+      transform: rotate(45deg);
+      position: absolute;
+      right: -10px;
+      top: 14px;
+      border-left: none;
+      border-bottom: none;
+      transition: .3s ease-out;
+      z-index: 10;
+    }
+    span{
+      position: relative;
+      z-index: 10;
+    }
+    &:hover,&:focus{
+      // background: $primaryColor;
+      color: #fff;
+      box-shadow: none;
+      &:after{
+        height: 100%;
+      }
+      &:before{
+        right: 10px;
+      }
+    }
+  }
+}
+//--1形象圖-------------------------------------------------------------------//
+.c-mpSlider{
+  width: 100%;
+  position: relative;
+  @include gutter(0);
+  .sliderBlock{
+    .slick-prev,
+    .slick-next {
+      background: rgba(0,0,0,.5);
+      z-index: 10;
+      &:hover,
+      &:focus {
+        background:$navColorHover;
+      }
+    }
+    .slick-prev {
+      left: 0;
+      &:before{
+        border-left:3px solid #fff;
+        border-bottom:3px solid #fff;
+      }
+    }
+    .slick-next {
+      right: 0;
+      &:before{
+        border-top:3px solid #fff;
+        border-right:3px solid #fff;
+      }
+    }
+    .img-container {
+      @include aspect-ratio(5, 2);
+      img{
+        object-fit: cover;
+        transition: transform 10s ease-out 0.4s;
+        transform: scale(1)
+      }
+      &:hover{
+        img{
+          transform: scale(1.05);
+        }
+      }
+      @include screen('mobile') {
+        @include aspect-ratio(5, 3); 
+        a .caption{
+          height: 2em;
+          line-height: 2em;
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+}
+.col-12{
+  .img-container.slick-current img{
+    transform: scale(1.05)
+  }
+  .img-container.slick-current.start img{
+    transition: transform 0s 0s;
+    transform: scale(1)
+  }
+}
+//--2形象圖+服務資訊-----------------------------------------------------------//
+.c-mpSlider.is-b{
+  margin-bottom: 25px;
+  &:after{
+    content: "";
+    background: $secondaryColor;
+    width: 100%;
+    height: 96%;
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    z-index: 9;
+  }
+  .container{
+    z-index: 10;
+    position: relative;
+    display: flex;
+    padding: 0 15px;
+    @include screen('tablet') {
+      display: block;
+    }
+  }
+  .sliderBlock{
+    width:705px;
+    flex-shrink:0;
+    .img-container {
+      @include aspect-ratio(745, 420);
+    }
+    @include screen('tablet') {
+      width: 100%;
+    }
+  }
+  .textBlock{
+    padding: 2em;
+    color: #fff;
+    background: $mpSliderBg;
+    position: relative;
+    flex-shrink:1;
+    flex-grow:1;
+    max-height: 404px;
+    @include screen('tablet') {
+      width: 100%;
+      max-height: none;
+    }
+    h2{
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    ul{
+      @include li-reset;
+      max-height: 300px;
+      overflow: hidden;
+      li{
+        font-size: 0.9375em;
+        margin-bottom: 4px;
+        padding-left: 25px;
+        position: relative;
+        &:before{
+          content: '';
+          width: 10px;
+          height: 3px;
+          background: rgba(255,255,255,.5);
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 10px;
+        }
+      }
+    }
+    .more{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      a{
+        display: block;
+        color: $mpSliderBg;
+        font-weight: bold;
+        background: rgba(255,255,255,.9);
+        &:hover,&:focus{
+          background: #474747;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+//--3跑馬燈-------------------------------------------------------------------//
+.c-marquee {
+  // margin: 0 15px;
+  height: 60px;
+  overflow: hidden;
+  text-align: left;
+  position: relative;
+  // @include border-radius(6px);
+  // box-shadow: 0px 2px 5px rgba(0, 0, 0, .2) inset;
+  // @include gradient(#E1E1E1, #FEFEFE, vertical);
+  // @include gutter;
+  font-size: 1.125em;
+  .container{
+    @include gutter;
+    position: relative;
+    &:before{
+      content: "";
+      height: 60px;
+      background: $marqueeBg url(../images/alert.png) no-repeat 30px center;
+      border-radius: 3px;
+      position: absolute;
+      z-index: 9;
+      box-shadow: 0 0 3px rgba(0,0,0,.3) inset;
+      left: 15px;
+      right: 15px;
+      display: block;
+      @include screen('mobile') {
+        background: $marqueeBg url(../images/alert.png) no-repeat 15px center;
+      }
+    }
+  }
+  ul {
+    @include li-reset;
+    position: relative;
+    z-index: 10;
+  }
+  a {
+    display: block;
+    line-height: 60px;
+    font-weight: bold;
+    color: $secondaryColor;
+    @include text-overflow;
+    padding: 0 2em 0 76px;
+    @include screen('mobile') {
+      padding: 0 2em 0 50px;
+    }
+    &:hover,&:focus{
+      text-decoration: underline;
+      color: #222;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    transition: .3s ease-out;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    right: 10px;
+    left:auto;
+    z-index: 10;
+    &:before{
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: block;  
+      transform: rotate(135deg);
+      opacity: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-left: 0!important;
+    }
+    &:hover,
+    &:focus {
+      border: none !important;
+      outline: none;
+      background: none;
+    }
+  }
+  .slick-prev{
+    top: 25px;
+    &:before{
+      content: "";
+      border-left:3px solid #222;
+      border-bottom:3px solid #222;
+      margin-left: 10px;
+    }
+    &:hover:before,&:focus:before{
+      border-left:3px solid $secondaryColor;
+      border-bottom:3px solid $secondaryColor;
+    }
+  }
+  .slick-next{
+    top: 40px;
+    &:before{
+      content: "";
+      border-top:3px solid #222;
+      border-right:3px solid #222;
+      margin-left: -6px;
+    }
+    &:hover:before,&:focus:before{
+      border-top:3px solid $secondaryColor;
+      border-right:3px solid $secondaryColor;
+    }
+  }
+}
+//--4訊息公告共用css-----------------------------------------------------------//
+.news{
+  background: #fff;
+  padding: 22px 28px 50px 28px;
+  @include screen('mobile') {
+    padding: 15px 15px 40px 15px;
+  }
+  ul {
+    @include li-reset;
+    li{
+      line-height: 160%;
+      border-bottom: 1px solid #e2e2e2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 14px 4px 14px 32px; 
+      margin: 0;
+      position: relative;
+      text-align: left;
+      @include screen('mobile') {
+        padding: 14px 4px; 
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+      &:before{
+        content: "";
+        width: 12px;
+        height: 3px;
+        background: $lightColor;
+        position: absolute;
+        display: block;
+        left: 8px;
+        top: 24px;
+        @include screen('mobile') {
+          display: none;
+        }
+      }
+      time{
+        color: #666;
+        margin-right: 15px;
+      }
+      .news__classify{
+        margin-right: 15px;
+        color: $newsClassify;
+        font-weight: bold;
+        a{
+          color: $newsClassify;
+        }
+      }
+      .news__dep{
+        margin-right: 15px;
+        color: $newsDep;
+        font-weight: bold;
+        a{
+          color: $newsDep;
+        }
+      }
+      .news__txt{
+        color: #1a1a1a;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include screen('mobile') {
+          display: block;
+        }
+        a{
+          color: #1a1a1a;
+        }
+      }
+    }
+  }
+  .more{
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    margin-left: -44px;
+    @include screen('mobile') {
+      margin-left: -30px;
+    }
+  }
+}
+.is-b{
+  .news{
+    padding: 0;
+    border-top:3px solid #e9e9e9;
+    ul li{
+      line-height: 160%;
+      padding: 12px 4px;
+      &:before{
+        display: none;
+      }
+      .news__txt{
+        display: block;
+      }
+    }
+    .more{
+      margin-top: 20px;
+      position: relative;
+      margin-left: 0;
+      bottom: auto;
+    }
+  }
+}
+//--4訊息公告-----------------------------------------------------------------//
+.c-news{
+  background: #e6e6e6 url(../images/newsbg.jpg) no-repeat center top;
+  padding: 50px 0 60px 0;
+  @include screen('mobile') {
+    padding: 30px 0 40px 0;
+  }
+  .container{
+    @include gutter;
+  }
+  .block_title{
+    @include screen('mobile') {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+}
+.c-news.is-b{
+  background: none;
+  padding: 20px 0;
+}
+//--5訊息公告_頁籤共用css------------------------------------------------------//
+.c-tabNews{
+  .tabs{
+    text-align: right;
+    >.tabItem {
+      float: none;
+      display: inline-block;
+      font-size: 1.125em;
+      line-height: 1;
+      @include screen('mobile') {
+        width: 100%;
+      }
+      >a{
+        padding: 12px 1.2em;
+        background: none;
+        color: #444;
+        @include screen('mobile') {
+          background: #474747;
+          color: #fff;
+        }
+        &:hover,&:focus{
+          background: $tabItemActive;
+          color: #fff;
+        }
+      }
+      &.active>a{
+        background: $tabItemActive;
+        color: #fff;
+      }
+    }
+  }
+  .more{
+    @include screen('mobile') {
+      position: relative;
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+//--5訊息公告_頁籤------------------------------------------------------------//
+.c-tabNews{
+  background: #e6e6e6 url(../images/newsbg.jpg) no-repeat center top;
+  padding: 60px 0;
+  @include screen('tablet') {
+    padding: 40px 0;
+  }
+  @include screen('mobile') {
+    padding: 30px 0;
+  }
+  .container{
+    @include gutter;
+  }
+  .block_title{
+    margin-bottom: 12px;
+    @include screen('mobile') {
+      text-align: center;
+    }
+    span{
+      display: block;
+      @include screen('mobile') {
+        display: inline-block;
+      }
+      &:before{
+        display: none;
+        @include screen('mobile') {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .tabSet{
+    margin: -58px auto 0 auto;
+    padding-bottom: 20px;
+    @include screen('mobile') {
+      margin: 0 auto;
+    }
+  }
+  .more{
+    a {
+      @include screen('mobile') {
+        color: #444;
+        background: #e9e9e9;
+      }
+      &:hover,&:focus{
+        @include screen('mobile') {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.c-tabNews.is-b{
+  background: none;
+  padding: 20px 0;
+  .block_title{
+    text-align: center;
+    span{
+      display: inline-block;
+      &:before{
+        display: inline-block;
+      }
+    }
+  }
+  .tabSet{
+    margin: 0 auto;
+  }
+  .tabs{
+    text-align: left;
+  }
+  .news{
+    margin-top: 10px;
+    padding: 0;
+    border-top: 3px solid #e9e9e9;
+    ul li{
+      padding: 14px 4px;
+      &:before{
+        display: none;
+      }
+      .news__txt{
+        display: block;
+      }
+    }
+  }
+  .more{
+    margin: 10px 0 20px 0 ;
+    bottom: auto;
+    position: relative;
+
+  }
+  .narrow{
+    .news{
+      margin-top: 6px;
+      border-top: 0;
+      position: relative;
+
+      ul li:nth-child(n+4){
+        display: none;
+      }
+      .news__dep {
+        display: block;
+      }
+    }
+    .tabItem{
+      position: relative;
+      >a {
+        padding: 12px 1.2em;
+        background: #474747;
+        color: #fff;
+        &:hover,&:focus{
+          background: $tabItemHover;
+        }
+
+      }
+      &.active a{
+        background: $tabItemActive;
+      }
+    }
+    .more{
+      a {
+        color: #444;
+        background: #e9e9e9;
+        &:hover,&:focus{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+//--常用服務-共用css---------------------------------------------------------//
+.c-services{
+  .container{
+    padding: 50px 15px;
+    @include screen('mobile') {
+      padding: 15px;
+    }
+  }
+  .block_title{
+    // text-align: left;
+    text-align: center;
+    position: relative;
+    z-index: 11;
+    // @include screen('mobile') {
+    //   text-align: center;
+    // }
+    // span{
+    //   display: block;
+    //   @include screen('mobile') {
+    //     display: inline-block;
+    //   }
+    //   &:before{
+    //     display: none;
+    //     @include screen('mobile') {
+    //       display: inline-block;
+    //     }
+    //   }
+    // }
+  }
+  ul{
+    @include li-reset;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    li{
+      overflow: hidden;
+    }
+  }
+}
+//--6常用服務-方形圖文---------------------------------------------------------//
+.c-services.is-a{
+  position: relative;
+  &:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    display: block;
+    background: #e8e8e8 url(../images/servicebg.jpg) no-repeat center top;
+    z-index: 10;
+  }
+  ul{
+    position: relative;
+    z-index: 11;
+    justify-content: space-between;
+    @include screen('mobile') {
+      display: block;
+    }
+    li{
+      float: left;
+      width: 48%;
+      height: 95px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+      @include screen('mobile') {
+        width: 100%;
+      }
+      a{
+        display: block;
+        background: #fff;
+        height: 95px;
+        display: flex;
+        border-right: 5px solid $serviceColor;
+        position: relative;
+        color: #333;
+        transition: all .5s;
+        overflow: hidden;
+        &:before{
+          content: "";
+          width: 8px;
+          height: 8px;
+          display: block;
+          border-top: 2px solid $serviceColor;
+          border-right: 2px solid $serviceColor;
+          position: absolute;
+          right: 20px;
+          top: 42px;
+          transform: rotate(45deg);
+          transition: all .5s;
+          z-index: 10;
+        }
+        &:after{
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 100%;
+          display: block;
+          background: $serviceColor;
+          z-index: 9;
+          top: 0;
+          right: 0;
+          transition: all .5s;
+
+        }
+        .services__pic{
+          height: 95px;
+          flex-basis:200px;
+          flex-grow:0;
+          flex-shrink:0;
+          position: relative;
+          z-index: 10;
+          overflow: hidden;
+          @include screen('mobile') {
+            flex-basis:140px;
+          }
+          img{
+            transition: all .5s;
+            object-fit: cover;
+            transform: scale(1);
+          }
+        }
+        .services__item{
+          flex-grow:1;
+          flex-shrink:1;
+          display: flex;
+          align-self: center;
+          padding: 0 30px 0 20px;
+          font-size: 1.25em;
+          position: relative;
+          z-index: 10;
+          @include screen('mobile') {
+            font-size: 1.125em;
+          }
+        }
+        &:hover,&:focus{
+          color: #fff;
+          &:before{
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+          }
+          &:after{
+            width: 100%;
+            height: 100%;
+          }
+          .services__pic{
+            img{
+              transition: all .5s;
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//--7常用服務-圓形圖文---------------------------------------------------------//
+.c-services.is-b{
+  ul{
+    justify-content: space-around;
+    li{
+      text-align: center;
+      width: 16.6%;
+      @include screen('tablet') {
+        width: 20%;
+      }
+      @include screen('mobile') {
+        width: 50%;
+      }
+      a{
+        width: 100px;
+        padding: 10px;
+        color: #444;
+        text-align: center;
+        display: block;
+        box-sizing: content-box;
+        margin: auto;
+        .services__pic{
+          display: block;
+          width: 100px;
+          height: 100px;
+          margin-bottom: 12px;
+          background: $primaryColor;
+          line-height: 100px;
+          border-radius: 50%;
+          transition: all .5s;
+          img{
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            transition: all .5s;
+          }
+        }
+        .services__item{
+          display: block;
+          width: 100px;
+
+        }
+        &:hover,&:focus{
+          .services__pic{
+            border-radius: 0;
+          }
+        }
+      }
+      &:nth-child(even){
+        a .services__pic{
+          background: $secondaryColor;
+        }
+      }
+    }
+  }
+}
+//--8常用服務-文字區塊-整齊排列--------------------------------------------------//
+.c-services.is-c{
+  ul{
+    justify-content: space-around;
+    li{
+      text-align: center;
+      width: 32%;
+      margin-bottom: 20px;
+      @include screen('tablet') {
+        width: 48%;
+      }
+      a{
+        background: $serviceColor;
+        position: relative;
+        display: flex;
+        color: #fff;
+        height: 80px;
+        padding: 0 50px;
+        &:before{
+          content: "";
+          width: 50px;
+          height: 100%;
+          display: block;
+          background: $serviceColor2;
+          transform: skew(-45deg);
+          position: absolute;
+          left: -40px;
+          top: 0;
+          z-index: 10;
+          transition: all .5s;
+        }
+
+        .services__item{
+          align-self: center;
+          font-size: 1.125em;
+          position: relative;
+          z-index: 11;
+        }
+        &:hover{
+          &:before{
+            content: "";
+            width: 110%;
+            left: -35px;
+            transition: all .5s;
+          }
+        }
+      }
+    }
+  }
+}
+//--9常用服務-文字區塊-靠左不對齊排列--------------------------------------------------//
+.c-services.is-d{
+  background: $serviceBg url(../images/servicebg2.png) no-repeat center top;
+  background-size: cover;
+  .container{
+    display: flex;
+    position: relative;
+    @include screen('mobile') {
+      display: block;
+    }
+    &:before{
+      content: "";
+      height: 6px;
+      width: 50%;
+      background: $thirdColor;
+      display: block;
+      position: absolute;
+      left: 10px;
+      top: -6px;
+      @include screen('mobile') {
+        left: 0;
+      }
+    }
+  }
+  .block_title{
+    width: 25%;
+    flex-shrink: 0;
+    color: #fff;
+    text-align: left;
+    padding-left: 58px;
+    @include screen('tablet') {
+      padding-left: 20px;
+    }
+    @include screen('mobile') {
+      width: 100%;
+      text-align: center;
+      padding-left: 0;
+    }
+    span{
+      display: block;
+      color: $thirdColor;
+      margin-left: 0;
+      @include screen('tablet') {
+        display: inline-block;
+        margin-left: 4px;
+      }
+      &:before{
+        display: none;
+        @include screen('tablet') {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  ul{
+    flex-grow:0;
+    display: block;
+    margin-bottom: 0;
+    @include screen('mobile') {
+      text-align: center;
+    }
+    li{
+      margin-bottom: 10px;
+      margin-right: 6px;
+      display: inline-block;
+      white-space: nowrap;
+      @include screen('mobile') {
+        white-space: normal;
+      }
+      a{
+        .services__item{
+          background: #fff;
+          position: relative;
+          display: block;
+          color: $serviceBg;
+          padding: 8px 18px;
+          transition: all .5s;
+        }
+        &:hover,&:focus{
+          .services__item{
+            background: $serviceColor;
+            color:#fff;
+          }
+        }
+      }
+    }
+  }
+  .more{
+    position: absolute;
+    right:10px;
+    bottom: 0;
+    @include screen('mobile') {
+      position: relative;
+      right: auto;
+    }
+    a{
+      background: $serviceColor;
+      color: #fff;
+      &:hover,&:focus{
+        &:after{
+          background: #fff;
+        }
+        span{
+          color: $serviceBg;
+        }
+      }
+    }
+  }
+}
+//--10常用服務-文字區塊-置中不對齊排列--------------------------------------------------//
+.c-services.is-e{
+  .container{
+    background: url(../images/servicebg3.png) no-repeat center top;
+    position: relative;
+  }
+  .block_title{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  ul{
+    display: inline-block;
+    text-align: center;
+    @include screen('mobile') {
+      margin-bottom: 0;
+    }
+    li{
+      margin: 0 3px 10px 3px;
+      display: inline-block;
+      white-space: nowrap;
+      @include screen('mobile') {
+        white-space: normal;
+      }
+      a{
+        .services__item{
+          background: #fff;
+          position: relative;
+          display: block;
+          color: #fff;
+          background: $serviceColor;
+          padding: 8px 18px;
+          transition: all .5s;
+        }
+        &:hover,&:focus{
+          .services__item{
+            background: $serviceColor2;
+            color:#fff;
+          }
+        }
+      }
+    }
+  }
+  .more{
+    text-align: center;
+    a{
+      color: $serviceColor2;
+      border:2px solid $serviceColor2;
+      background: #fff;
+      &:hover,&:focus{
+        span{
+          color:#fff;
+        }
+      }
+    }
+  }
+}
+//--11照片/影音資訊-左文右圖（標題、內文、圖片）共用--------------------------------//
+.c-videos{
+  position: relative;
+  @include screen('mobile') {
+    background: $videoBg;
+  }
+  .container{
+    @include gutter(30px);
+    @include screen('mobile') {
+      padding: 30px 15px 30px 30px;
+    }
+  }
+  &:before{
+    content: "";
+    background: $videoBg;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    @include screen('mobile') {
+      display: none;
+    }
+  }
+  &:after{
+    content: "";
+    background: $videoBg2;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    @include screen('mobile') {
+      display: none;
+    }
+  }
+  .block_title{
+    @include screen('mobile') {
+      text-align: center;
+      color: #fff;
+    }
+    span{
+      display: block;
+      margin-left: 0;
+      @include screen('mobile') {
+        display: inline-block;
+        margin-left: 4px;
+        color: #fff;
+      }
+      &:before{
+        display: none;
+        @include screen('mobile') {
+          display: inline-block;
+          color: #fff;
+        }
+      }
+    }
+  }
+  ul.slick-dots{
+    position: absolute;
+    left: 10%;
+    bottom: -25px;
+    @include screen('mobile') {
+      left: 0;
+      position: relative;
+      bottom: 0;
+    }
+    li.slick-active button:before {
+      opacity:1;
+    }
+  }
+  .slick-prev, .slick-next{
+    display: none!important;
+  }
+  ul.video_slick{
+    @include li-reset;
+    position: relative;
+    z-index: 10;
+    margin-top: -70px;
+    margin-bottom: 35px; 
+    @include screen('mobile') {
+      margin-top: 0;
+      margin-bottom: 0;
+    } 
+    li{
+      .videos__info{
+        margin-top: 110px;
+        float: left;
+        letter-spacing: .05em;
+        max-height: 200px;
+        @include screen('mobile') {
+          float: none;
+          max-height: none;
+          margin-top: 0!important;
+        } 
+        .videos__title{
+          color: #fff;
+          margin-bottom: 16px;
+          font-size: 1.25em;
+          font-weight: bold;
+          max-height: 2.2em;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+        .videos__text{
+          color: #fff;
+          max-height: 6em;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          @include screen('tablet') {
+            -webkit-line-clamp: 3;
+            max-height: 4.5em;
+          }
+        }
+        .more{
+          margin-top: 16px;
+          display: inline-block;
+        }
+      }
+      .videos__pic{
+        float: right;
+        @include aspect-ratio(600, 338);
+        box-shadow: 5px 0 5px 0 rgba(0,0,0,.5);
+        @include screen('tablet') {
+          @include aspect-ratio(4, 3);
+        }
+        @include screen('mobile') {
+          @include aspect-ratio(600, 338);
+        }
+      }
+    }
+  }
+  .more{
+    @include screen('mobile') {
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    a{
+      background: #fff;
+      color: $videoBg;
+      @include screen('mobile') {
+        display: inline-block;
+      }
+      &:hover,&:focus{
+        color: #fff;
+      }
+    }
+  }
+  &.is-a{
+    &:before{
+      content: "";
+      height: 270px;
+      width: 48vw;
+    }
+    &:after{
+      content: "";
+      height: 270px;
+      width: 46vw;
+    }
+    .videos__info{
+      width: 45%;
+      @include screen('mobile') {
+        width: 100%;
+      } 
+    }
+    .videos__pic{
+      width: 50%;
+      @include screen('mobile') {
+        width: 100%;
+      } 
+    }
+  }
+  &.is-b{
+    margin: 30px 0;
+    @include screen('mobile') {
+      margin: 0;
+    }
+    &:before{
+      content: "";
+      height: 270px;
+      width: 100vw;
+    }
+    &:after{
+      content: "";
+      height: 250px;
+      width: 46vw;
+      bottom: -25px;
+    }
+    .videos__info{
+      width: 45%;
+      @include screen('mobile') {
+        width: 100%;
+      } 
+    }
+    .videos__pic{
+      width: 50%;
+      @include screen('mobile') {
+        width: 100%;
+      } 
+    }
+    ul.slick-dots{
+      left:auto;
+      text-align: right;
+      @include screen('mobile') {
+        text-align: center;
+      }
+    }
+  }
+  &.is-c{
+    margin:30px 0;
+    @include screen('mobile') {
+      margin: 0;
+    }
+    &:before{
+      content: "";
+      height: 270px;
+      width: 100vw;
+    }
+    &:after{
+      content: "";
+      height: 400px;
+      width: 46vw;
+      bottom: -25px;
+    }
+    .videos__info{
+      width: 45%;
+      @include screen('mobile') {
+        width: 100%;
+      } 
+    }
+    .videos__pic{
+      width: 50%;
+      @include screen('mobile') {
+        width: 100%;
+      } 
+    }
+    ul.slick-dots{
+      left:auto;
+      text-align: right;
+      @include screen('mobile') {
+        text-align: center;
+      }
+    }
+  }
+  &.is-d{
+    margin:30px 0;
+    @include screen('mobile') {
+      margin: 0;
+    } 
+    .block_title{
+      padding-left: 50%;
+      position: relative;
+      z-index: 15;
+      @include screen('mobile') {
+        padding-left: 0;
+      }
+      span{
+        display: inline-block;
+        &:before{
+          display: inline-block;
+          margin-left: 4px;
+        }
+      }
+    }
+    &:before{
+      content: "";
+      height: 350px;
+      width: 100vw;
+      bottom: 0;
+      background: #eeeded!important;
+    }
+    &:after{
+      content: "";
+      height: 350px;
+      width: 35vw;
+      bottom: 0;
+      left: 0;
+      background: $serviceColor!important;
+      @include screen('mobile') {
+        width: 100vw;
+      } 
+    }
+    .videos__info{
+      margin-top: 70px!important;
+      width: 50%;
+      float: right!important;
+      @include screen('mobile') {
+        width: 100%;
+        margin-top: 0!important;
+        float: none!important;
+      } 
+      .videos__title,.videos__text{
+        color: #555!important;
+        @include screen('mobile') {
+          color: #fff!important;
+        } 
+      }
+    }
+    .videos__pic{
+      width: 45%;
+      float: left!important;
+      @include screen('mobile') {
+        width: 100%;
+        margin-bottom: 25px;
+        float: none!important;
+      } 
+    }
+    ul.slick-dots{
+      left: 50%;
+      text-align: left;
+      bottom: -20px;
+      @include screen('mobile') {
+        left: auto;
+        text-align: center;
+        bottom: 0;
+      } 
+    }
+    .more{
+      a{
+        background: #474747;
+        color: #fff;
+      }
+    }
+  }
+}
+
+//--13廣告輪播-圖片------------------------------------------------------------//
+.c-adSlider {
+  .container{
+    // @include gutter(70px);
+    @include screen('mobile') {
+      @include gutter();
+    }
+  }
+  margin-bottom: 20px;
+
+  .slick-prev {
+    left: -35px;
+  }
+  .slick-next {
+    right: -35px;
+  }
+  .img-container {
+    margin: 0px 15px;
+    @include aspect-ratio(210, 68);
+    background: #fff;
+    a {
+      display: block;
+      text-align: center;
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+//--14廣告輪播-圖片------------------------------------------------------------//
+.c-adSlider.is-b {
+  .img-container {
+    a {
+      display: block;
+      text-align: center;
+      background: $adSliderBg;
+      color: #fff;
+      padding: 1em;
+      display: flex;
+      transition: all .5s;
+      &:hover,&:focus{
+        color: #fff;
+        background: $secondaryColor;
+      }
+      span{
+        height: 48px;
+        overflow: hidden;
+        display: block;
+        align-self: center;
+      }
+    }
+  }
+}
+
+
+
+.c-freebocok{
+  padding: 28px;
+  background: #eeeded;
+  ul{
+    @include li-reset;
+    li{
+      margin-bottom: 4px;
+      img{
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+  }
+  &.is-dep{
+    text-align: center;
+    h3{
+      font-size: 1.375em;
+      font-weight: bold;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #8d8d8d;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    dl{
+      dt{
+        font-weight: bold;
+      }
+      dd{
+        font-size: .875em;
+        margin: 0;
+      }
+    }
+  }
+  &.is-warn{
+    .alert{
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #8d8d8d;
+    }
+    .alertlight{
+      font-size: .875em;
+      margin-bottom: 10px;
+      li{
+        &:before{
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          display: inline-block;
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+        &.green:before{
+          background: #548600;
+        }
+        &.yellow:before{
+          background: #ffae00;
+        }
+        &.red:before{
+          background: #ff1200;
+        }
+        &.orange:before{
+          background: #ff6c00;
+        }
+      }
+    }
+  }
+  .link_block{
+    text-align: center;
+    ul{
+      li{
+        a{
+          display: block;
+          line-height: 50px;
+          white-space: nowrap;
+          color: #fff;
+          background: $primaryColor;
+          letter-spacing: 1px;
+          transition: all .5s;
+          &:hover,&:focus{
+            color: #fff;
+            background: $secondaryColor;
+          }
+        }
+      }
+    }
+  }
+}
