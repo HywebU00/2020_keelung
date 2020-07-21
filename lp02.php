@@ -39,18 +39,18 @@
         <!-- function -->
         <div class="function_panel">
           <!-- adSearch -->
-          <?php require_once('include/adSearch-a.html'); ?>
+          <?php require('include/adSearch-b.html'); ?>
           <!-- function轉寄回上頁分享 -->
-          <?php require_once('include/function.html'); ?>
+          <?php require('include/function.html'); ?>
         </div>
         <!-- LP Start -->
         <section class="lp">
           <!-- innerInfo -->
-          <?php require_once('include/innerInfo.html'); ?>
+          <?php require('include/innerInfo.html'); ?>
           <!-- category -->
-          <?php require_once('include/category.html'); ?>
+          <?php require('include/category.html'); ?>
           <!-- lp01 -->
-          <?php require_once('include/lp02.html'); ?>
+          <?php require('include/lp02.html'); ?>
         </section>
         <!-- LP End -->
         <!-- Pagination -->

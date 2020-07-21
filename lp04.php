@@ -50,7 +50,7 @@
           <!-- category -->
           <?php require('include/category.html'); ?>
           <!-- lp01 -->
-          <?php require('include/lp03.html'); ?>
+          <?php require('include/lp04.html'); ?>
         </section>
         <!-- LP End -->
         <!-- Pagination -->
