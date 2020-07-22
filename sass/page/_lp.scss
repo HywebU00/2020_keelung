@@ -117,12 +117,99 @@
         text-align: left;
       }
     }
+    &.center{
+      text-align: center; 
+    }
     &.num {
       text-align: center;
       color: #666;
       @include screen('mobile') {
         text-align: left;
       }
+    }
+    a{
+      &.doc,&.docx,&.odt,&.xls,&.csv,&.ods,&.xlsx,&.ppt,&.pptx,&.odp,&.zip,&.txt,&.mov,&.mp3,&.jpg,&.wmv,&.mp4,&.pdf{
+        width: 26px;
+        height: 28px;
+        display: inline-block;
+        text-indent: -99px;
+        overflow: hidden;
+        vertical-align: middle;
+      }
+      
+    }
+    a.doc{
+      background: url(../images/basic/icon_doc.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.docx{
+      background: url(../images/basic/icon_docx.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.odt{
+      background: url(../images/basic/icon_odt.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.xls{
+      background: url(../images/basic/icon_xls.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.csv{
+      background: url(../images/basic/icon_csv.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.ods{
+      background: url(../images/basic/icon_ods.png) no-repeat center center;
+      background-size: contain;
+    }
+
+    a.xlsx{
+      background: url(../images/basic/icon_xlsx.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.ppt{
+      background: url(../images/basic/icon_ppt.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.pptx{
+      background: url(../images/basic/icon_pptx.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.odp{
+      background: url(../images/basic/icon_odp.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.zip{
+      background: url(../images/basic/icon_zip.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.txt{
+      background: url(../images/basic/icon_txt.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.mov{
+      background: url(../images/basic/icon_mov.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.mp3{
+      background: url(../images/basic/icon_mp3.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.jpg{
+      background: url(../images/basic/icon_jpg.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.wmv{
+      background: url(../images/basic/icon_wmv.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.mp4{
+      background: url(../images/basic/icon_mp4.png) no-repeat center center;
+      background-size: contain;
+    }
+    a.pdf{
+      background: url(../images/basic/icon_pdf.png) no-repeat center center;
+      background-size: contain;
     }
   }
 }
@@ -263,6 +350,9 @@
           @include screen('mobile') {
             margin-top: 10px;
             display: block;
+          }
+          &:hover,&:focus{
+            color: $primaryColor;
           }
         }
       }
