@@ -36,23 +36,27 @@
           <!-- breadcrumb -->
           <?php require_once('include/breadcrumb.html'); ?>
           <!-- h2 -->
-          <h2 class="pageTitle">節點標題</h2>
+          <h2 class="pageTitle">新建里</h2>
           <!-- function -->
           <div class="function_panel">
-            <!-- adSearch -->
-            <?php require('include/adSearch-a.html'); ?>
             <!-- function轉寄回上頁分享 -->
             <?php require('include/function.html'); ?>
           </div>
-          <!-- innerInfo -->
-          <?php require('include/innerInfo.html'); ?>
           <!-- category -->
           <?php require('include/category.html'); ?>
-          <!-- LP Start -->
-          <?php require('include/lp01.html'); ?>
-          <!-- LP End -->
-          <!-- Pagination -->
-          <?php require_once('include/pagination.html'); ?>
+          <!-- tag 文章標籤 -->
+          <?php require('include/tag.html'); ?>
+          <!-- CP Start -->
+          <?php require('include/cp01.html'); ?>
+          <!-- CP End -->
+          <!-- cp_slider+slick_lightbox -->
+          <?php require('include/slider.html'); ?>
+          <!-- file download 檔案下載 -->
+          <?php require('include/file.html'); ?>
+          <!-- weblink 外部連結 -->
+          <?php require('include/weblink.html'); ?>
+          <!-- publish -->
+          <?php require('include/publish.html'); ?>
         </div>
       </div>
     </div>

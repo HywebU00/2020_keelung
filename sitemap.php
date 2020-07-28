@@ -37,22 +37,9 @@
           <?php require_once('include/breadcrumb.html'); ?>
           <!-- h2 -->
           <h2 class="pageTitle">節點標題</h2>
-          <!-- function -->
-          <div class="function_panel">
-            <!-- adSearch -->
-            <?php require('include/adSearch-a.html'); ?>
-            <!-- function轉寄回上頁分享 -->
-            <?php require('include/function.html'); ?>
-          </div>
-          <!-- innerInfo -->
-          <?php require('include/innerInfo.html'); ?>
-          <!-- category -->
-          <?php require('include/category.html'); ?>
-          <!-- LP Start -->
-          <?php require('include/lp01.html'); ?>
+          <!-- LP Start -->    
+          <?php require('include/sitemap.html'); ?>
           <!-- LP End -->
-          <!-- Pagination -->
-          <?php require_once('include/pagination.html'); ?>
         </div>
       </div>
     </div>

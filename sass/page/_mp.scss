@@ -192,17 +192,21 @@ section{
       li{
         font-size: 0.9375em;
         margin-bottom: 4px;
-        padding-left: 25px;
+        padding-left: 18px;
         position: relative;
         &:before{
-          content: '';
-          width: 10px;
-          height: 3px;
-          background: rgba(255,255,255,.5);
+          content: "";
+          width: 4px;
+          height: 4px;
           display: block;
+          border-top: 2px solid rgba(255,255,255,.5);
+          border-right: 2px solid rgba(255,255,255,.5);
           position: absolute;
-          left: 0;
+          left: 2px;
           top: 10px;
+          transform: rotate(45deg);
+          transition: all .5s;
+          z-index: 10;
         }
       }
     }
@@ -356,13 +360,17 @@ section{
       }
       &:before{
         content: "";
-        width: 12px;
-        height: 3px;
-        background: $lightColor;
-        position: absolute;
+        width: 6px;
+        height: 6px;
         display: block;
+        border-top: 2px solid $lightColor;
+        border-right: 2px solid $lightColor;
+        position: absolute;
         left: 8px;
-        top: 24px;
+        top: 22px;
+        transform: rotate(45deg);
+        transition: all .5s;
+        z-index: 10;
         @include screen('mobile') {
           display: none;
         }

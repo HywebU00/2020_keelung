@@ -10,7 +10,7 @@ $btn-radius:.2em;
 }
 
 // 按鈕的共用設定
-@mixin btn_setting($btn-bg:#676767, $btn-font-color:$btn-font-color) {
+@mixin btn_setting($btn-bg:#888, $btn-font-color:$btn-font-color) {
     background-color: $btn-bg;
     border: 1px solid darken($btn-bg, 5);
     color: $btn-font-color!important;
@@ -18,7 +18,7 @@ $btn-radius:.2em;
     @include border-radius($btn-radius);
     // @include gradient(lighten($btn-bg, 5), darken($btn-bg, 15), vertical);
     &:hover, &:focus {
-        background-color: darken($btn-bg, 5); // Old browsers
+        background-color: darken($btn-bg, 10); // Old browsers
         border: 1px solid darken($btn-bg, 10) !important;
         cursor: pointer;
         color: #FFF;
@@ -43,7 +43,7 @@ $btn-radius:.2em;
     line-height: normal;
     width: auto;
     padding: $btn-padding;
-    min-width: 4em;
+    min-width: 5em;
     margin: .25em .1em;
     
     i {

@@ -1,6 +1,6 @@
 // function_panel setting
 .function_panel {
-  margin: .2em 0;
+  margin: 0 0 1em 0;
   padding: .5em 0 .5em;
   min-height: 35px;
   text-align: right;
@@ -16,14 +16,14 @@
       a{
         line-height: 40px;
         padding: 0 1em 0 2.5em;
-        background: $primaryColor url(../images/basic/icon_search.png) no-repeat 16px center;
+        background: $secondaryColor url(../images/basic/icon_search.png) no-repeat 16px center;
         background-size: 16px;
         color: #fff;
         display: block;
         border-radius: 3px;
         transition: all .5s;
         &:hover,&:focus{
-          background: $secondaryColor url(../images/basic/icon_search.png) no-repeat 16px center;
+          background: $primaryColor url(../images/basic/icon_search.png) no-repeat 16px center;
           background-size: 16px;
           box-shadow: none;
         }
@@ -33,12 +33,13 @@
       position: absolute;
       left: 15px;
       right: 15px;
-      top: 143px;
+      top: 154px;
       padding: 1.5em;
       background: #e6e6e6 url(../images/servicebg.jpg) no-repeat center top;
       box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
       border-top: 4px solid $primaryColor;
       display: none;
+      z-index: 999;
       .form_grid{
         border-top: 0;
         margin: 0;

@@ -602,9 +602,9 @@
   position: fixed;
   width: 100%;
   right: 0;
-  top: 0;
+  top: -85px;
   box-shadow: rgba(0, 0, 0, .5) 0 0 25px;
-  background: rgba(255, 255, 255, .9);
+  background: rgba(0, 0, 0, .8);
   z-index: 999;
   @include screen('mobile') {
     background: #FFF;
@@ -619,7 +619,7 @@
     >ul {
       >li {
         >a {
-          // color: #FFF;
+          color: #FFF;
         }
       }
     }

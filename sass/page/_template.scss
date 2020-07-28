@@ -60,7 +60,7 @@ html {
   @include screen('mobile') {
     padding-top: 60px;
   }
-  h2.title{
+  h2.pageTitle{
     font-size: 1.875em;
   }
   .inner_img{
@@ -90,6 +90,7 @@ html {
     @include screen('mobile') {
     }
     .inner_info{
+      margin-bottom: 1em;
       img{
         width: 100%;
         height: auto;

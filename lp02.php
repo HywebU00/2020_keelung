@@ -32,29 +32,28 @@
       <!-- innerimg 內頁上方大圖 -->
       <?php require_once('include/innerimg.html'); ?>
       <div class="container">
-        <!-- breadcrumb -->
-        <?php require_once('include/breadcrumb.html'); ?>
-        <!-- h2 -->
-        <h2 class="title">節點標題</h2>
-        <!-- function -->
-        <div class="function_panel">
-          <!-- adSearch -->
-          <?php require('include/adSearch-b.html'); ?>
-          <!-- function轉寄回上頁分享 -->
-          <?php require('include/function.html'); ?>
-        </div>
-        <!-- LP Start -->
-        <section class="lp">
+        <div class="center_block">
+          <!-- breadcrumb -->
+          <?php require_once('include/breadcrumb.html'); ?>
+          <!-- h2 -->
+          <h2 class="pageTitle">節點標題</h2>
+          <!-- function -->
+          <div class="function_panel">
+            <!-- adSearch -->
+            <?php require('include/adSearch-b.html'); ?>
+            <!-- function轉寄回上頁分享 -->
+            <?php require('include/function.html'); ?>
+          </div>
           <!-- innerInfo -->
           <?php require('include/innerInfo.html'); ?>
           <!-- category -->
           <?php require('include/category.html'); ?>
-          <!-- lp01 -->
+          <!-- LP Start -->
           <?php require('include/lp02.html'); ?>
-        </section>
-        <!-- LP End -->
-        <!-- Pagination -->
-        <?php require_once('include/pagination.html'); ?>
+          <!-- LP End -->
+          <!-- Pagination -->
+          <?php require_once('include/pagination.html'); ?>
+        </div>
       </div>
     </div>
     <!-- main End -->

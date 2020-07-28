@@ -114,14 +114,22 @@
             border: none;
             background: none;
             width: 100%;
+            padding-left: 1em;
+            position: relative;
             &:before{
               content: "";
-              width: 5px;
-              height: 2px;
-              background: $fatfooterTxtColor;
-              display: inline-block;
-              margin-right: 6px;
-              margin-bottom: 5px;
+              width: 4px;
+              height: 4px;
+              display: block;
+              border-top: 2px solid $fatfooterTxtColor;
+              border-right: 2px solid $fatfooterTxtColor;
+              position: absolute;
+              left: 2px;
+              top: 12px;
+              transform: rotate(45deg);
+              transition: all .5s;
+              z-index: 10;
+
             }
             @include screen('mobile') {
               display: inline-block;

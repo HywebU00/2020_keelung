@@ -49,7 +49,7 @@
           <!-- category -->
           <?php require('include/category.html'); ?>
           <!-- LP Start -->
-          <?php require('include/lp01.html'); ?>
+          <?php require('include/lp06.html'); ?>
           <!-- LP End -->
           <!-- Pagination -->
           <?php require_once('include/pagination.html'); ?>
