@@ -6,6 +6,7 @@
   text-align: right;
   border-top: 1px solid #DDD;
   border-bottom: 1px solid #DDD;
+  position: relative;
   @include screen('mobile') {
     margin: .6em 0;
     padding: .5em 0 .5em;
@@ -31,9 +32,9 @@
     }
     .adSearch__form{
       position: absolute;
-      left: 15px;
-      right: 15px;
-      top: 154px;
+      left: 0;
+      right: 0;
+      top: 56px;
       padding: 1.5em;
       background: #e6e6e6 url(../images/servicebg.jpg) no-repeat center top;
       box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);

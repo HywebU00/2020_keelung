@@ -70,7 +70,7 @@ html {
     margin-bottom: 1.5em;
     @include screen('mobile') {
       height: 100px;
-      margin-bottom: .5em;
+      margin-bottom: 1em;
     }
     img{
       position: absolute;
@@ -87,7 +87,9 @@ html {
     box-sizing: border-box;
     position: relative;
     min-height: 1px;
+    display: flex;
     @include screen('mobile') {
+      display: block;
     }
     .inner_info{
       margin-bottom: 1em;
@@ -99,8 +101,168 @@ html {
       p{
         margin-top: 0;
       }
+      +.np{
+        margin-top: 0;
+        padding-top: 0;
+      }
     }
-  }
-  
+  } 
+
+}
+.center_block{
+  width: 100%;
+  flex-grow: 0;
 }
 
+.left_block{
+  padding-bottom: 2em;
+  flex-basis: 240px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 2em;
+  @include screen('mobile') {
+    float: none;
+    display: block; 
+    width: 100%;
+    margin-right: 0; 
+    margin-bottom: 1em;
+    padding-bottom: 0;
+  }
+  +.center_block{
+    max-width: 798px;
+  }
+  nav{
+    .left_title{
+      background: $primaryColor; 
+      padding: .7em 1em;
+      text-align: center;
+      color: #fff;
+      font-size: 1.25em;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin: 0;
+      @include screen('mobile') {
+        font-size: 1em;
+        text-align: left;
+        position: relative;
+        &:before{
+          content: "";
+          width: 5px;
+          height: 5px;
+          display: block;
+          border-right: 2px solid #fff;
+          border-top: 2px solid #fff;
+          transform: rotate(135deg);
+          vertical-align: middle;
+          position: absolute;
+          top: 18px;
+          right: 15px;
+        }
+      }
+    }
+    >ul{
+      @include li-reset;
+      border:2px solid #ccc;
+      border-top: 0;
+      @include screen('mobile') {
+        display: none;
+      }
+      >li{
+        border-bottom: 1px solid #ccc;
+        &:last-child{
+          border-bottom: 0;
+        }
+        >a{
+          padding: .6em 1em .6em 2em;
+          display: block;
+          color: #444;
+          font-weight: bold;
+          position: relative;
+          &:before{
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 0 5px 6px;
+            border-color: transparent transparent transparent #444;
+            display: block;
+            position: absolute;
+            left: 15px;
+            top: 17px;
+          }
+          &:hover,&:focus,&.active{
+            background: #ddd;
+            color: $primaryColor;
+            box-shadow: none;
+            &:before{
+              content: "";
+              border-color: transparent transparent transparent $primaryColor;
+            }
+          }
+          &.active{
+            background: #ddd;
+            &:hover{
+              background: transparent;
+            }
+          }
+        }
+        ul{
+          @include li-reset;
+          font-size: 0.875em;
+          background: #f5f5f5;
+          li{
+            border-top: 1px dotted #ccc;
+            a{
+              padding: .6em 1em .6em 2.1em;
+              display: block;
+              color: #444;
+              position: relative;
+              &:before{
+                content: "";
+                width: 5px;
+                height: 5px;
+                display: block;
+                border-right: 2px solid #515151;
+                border-top: 2px solid #515151;
+                transform: rotate(45deg);
+                vertical-align: middle;
+                position: absolute;
+                left: 13px;
+                top: 17px;
+              }
+              &.active{
+                  // color: $linkColor;
+                  color: #fff;
+                  background: $primaryColor;
+                  &:before {
+                    content: "";
+                    border-right: 2px solid #fff;
+                    border-top: 2px solid #fff;
+                  }
+                }
+                &:hover,&:focus{
+                  color: #fff;
+                  box-shadow: none;
+                  background: #474747;
+                  &:before{
+                    content: "";
+                    width: 5px;
+                    height: 5px;
+                    display: block;
+                    border-right: 2px solid #fff;
+                    border-top: 2px solid #fff;
+                    transform: rotate(45deg);
+                    vertical-align: middle;
+                    position: absolute;
+                    left: 13px;
+                    top: 17px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }

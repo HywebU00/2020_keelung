@@ -30,16 +30,34 @@
     <div id="center" class="main innerpage">
       <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
       <!-- innerimg 內頁上方大圖 -->
-      <?php require_once('include/innerimg.html'); ?>
+      <div class="inner_img">
+        <img src="images/innerimg3.jpg" alt="">
+      </div>
       <div class="container">
+        <?php require_once('include/left_block.html'); ?>
         <div class="center_block">
           <!-- breadcrumb -->
           <?php require_once('include/breadcrumb.html'); ?>
           <!-- h2 -->
-          <h2 class="pageTitle">節點標題</h2>
-          <!-- sitemap Start -->    
-          <?php require('include/sitemap.html'); ?>
-          <!-- sitemap End -->
+          <h2 class="pageTitle">食品規範</h2>
+          <!-- function -->
+          <div class="function_panel">
+            <!-- adSearch -->
+            <?php require('include/adSearch-a.html'); ?>
+            <!-- function轉寄回上頁分享 -->
+            <?php require('include/function.html'); ?>
+          </div>
+          <!-- innerInfo -->
+          <?php require('include/innerInfo.html'); ?>
+          <!-- CP Start -->
+          <?php require('include/cp03.html'); ?>
+          <!-- CP End -->
+          <!-- cp_slider+slick_lightbox -->
+          <?php require('include/slider.html'); ?>
+          <!-- weblink 外部連結 -->
+          <?php require('include/weblink.html'); ?>
+          <!-- file download 檔案下載 -->
+          <?php require('include/file.html'); ?>
         </div>
       </div>
     </div>

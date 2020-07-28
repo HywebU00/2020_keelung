@@ -36,10 +36,17 @@
           <!-- breadcrumb -->
           <?php require_once('include/breadcrumb.html'); ?>
           <!-- h2 -->
-          <h2 class="pageTitle">節點標題</h2>
-          <!-- sitemap Start -->    
-          <?php require('include/sitemap.html'); ?>
-          <!-- sitemap End -->
+          <h2 class="pageTitle">食品規範</h2>
+          <!-- function -->
+          <div class="function_panel">
+            <!-- function轉寄回上頁分享 -->
+            <?php require('include/function.html'); ?>
+          </div>
+          <!-- innerInfo -->
+          <?php require('include/innerInfo.html'); ?>
+          <!-- NP Start -->
+          <?php require('include/np.html'); ?>
+          <!-- NP End -->
         </div>
       </div>
     </div>

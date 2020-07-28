@@ -396,7 +396,7 @@ section{
         }
       }
       .news__txt{
-        color: #1a1a1a;
+        color: $text-color;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -404,7 +404,7 @@ section{
           display: block;
         }
         a{
-          color: #1a1a1a;
+          color: $text-color;
         }
       }
     }

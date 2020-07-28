@@ -37,9 +37,9 @@
           <?php require_once('include/breadcrumb.html'); ?>
           <!-- h2 -->
           <h2 class="pageTitle">節點標題</h2>
-          <!-- LP Start -->    
+          <!-- FP Start -->    
           <?php require('include/fp.html'); ?>
-          <!-- LP End -->
+          <!-- FP End -->
         </div>
       </div>
     </div>
