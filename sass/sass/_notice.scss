@@ -44,11 +44,12 @@
     }
 }
 *[class*="notice_info"] {
-    color: #00529B;
-    background-color: #BDE5F8;
+    color: #222;
+    background-color: #cdcdcd;
     &:before {
         background: url(../images/basic/icon_info.svg) no-repeat center center;
         background-size: 15px;
+        filter: grayscale(1);
     }
 }
 *[class*="notice_success"] {

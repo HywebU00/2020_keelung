@@ -97,7 +97,7 @@ a.more {
     }
 }
 a{
-    &.file_doc,&.file_docx,&.file_odt,&.file_xls,&.file_csv,&.file_ods,&.file_xlsx,&.file_ppt,&.file_pptx,&.file_odp,&.file_zip,&.file_txt,&.file_mov,&.file_mp3,&.file_jpg,&.file_wmv,&.file_mp4,&.file_pdf{
+    &.file_doc,&.file_docx,&.file_odt,&.file_xls,&.file_csv,&.file_ods,&.file_xlsx,&.file_ppt,&.file_pptx,&.file_odp,&.file_zip,&.file_txt,&.file_mov,&.file_mp3,&.file_jpg,&.file_wmv,&.file_mp4,&.file_pdf,&.file_other{
       width: 26px;
       height: 28px;
       display: inline-block;
@@ -180,7 +180,10 @@ a.file_pdf{
     background: url(../images/basic/icon_pdf.png) no-repeat center center;
     background-size: contain;
 }
-
+a.file_other{
+    background: url(../images/basic/icon_other.png) no-repeat center center;
+    background-size: contain;
+}
 // scrollTop
 .scrollToTop {
     width: 50px;
