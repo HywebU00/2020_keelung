@@ -32,7 +32,7 @@ footer {
     @include make-lg-column(6);
     @include gutter(0);
     margin: 0 0 10px 0;
-    padding: 0 0 0 15px!important;
+    padding: 0;
     font-size: 1em;
     position: relative;
     font-weight: 500;
@@ -40,24 +40,23 @@ footer {
     @include screen('mobile') {
       display: none;
     }
-    &:before {
-      content: "";
-      width: 4px;
-      height: 92%;
-      display: block;
-      position: absolute;
-      left: 0;
-      background: $navColor;
-    }
     a {
       display: inline-block;
       text-decoration: none;
     }
     img {
       display: inline-block;
-      max-width: 80px;
-      max-height: 26px;
+      height: 50px;
       vertical-align: middle;
+      margin-bottom: 10px;
+      @include screen('mobile') {
+        width: auto;
+        height: auto;
+        max-width: 80px;
+        max-height: 54px;
+        margin: 0px auto;
+        transform: scale(.8);
+      }
     }
     .logo__keelung{
       font-family: 'Noto Serif TC', serif;
@@ -68,6 +67,22 @@ footer {
       letter-spacing: 2px;
       line-height: 120%;
       margin-right: -3px;
+      padding-left: 15px;
+      @include screen('mobile') {
+        font-size: 1.25em;
+      }
+      &:before {
+        content: "";
+        width: 4px;
+        height: 92%;
+        display: block;
+        position: absolute;
+        left: 0;
+        background: $navColor;
+        @include screen('mobile') {
+          display: none;
+        }
+      }
     }
     .logo__dep {
       font-size: 1.625em;
@@ -75,6 +90,9 @@ footer {
       color: $navColor;
       letter-spacing: 1px;
       line-height: 100%;
+      @include screen('mobile') {
+        font-size: 1.25em;
+      }
     }
     .logo__dep-en {
       font-size: .75em;
@@ -82,6 +100,11 @@ footer {
       display: block;
       text-align: left;
       margin-left: 2px;
+      padding-left: 15px;
+      @include screen('mobile') {
+        text-align: center;
+        line-height: 140%;
+      }
     }
   }
   .footer_share {
