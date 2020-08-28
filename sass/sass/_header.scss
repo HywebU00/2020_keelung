@@ -271,8 +271,7 @@
       @include screen('mobile') {
         width: auto;
         height: auto;
-        max-width: 80px;
-        max-height: 54px;
+        max-height: 40px;
         margin: 0px auto;
         transform: scale(.8);
       }
