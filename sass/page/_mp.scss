@@ -242,21 +242,21 @@ section{
   .container{
     @include gutter;
     position: relative;
-    &:before{
-      content: "";
-      height: 60px;
-      background: $marqueeBg url(../images/alert.png) no-repeat 30px center;
-      border-radius: 3px;
-      position: absolute;
-      z-index: 9;
-      box-shadow: 0 0 3px rgba(0,0,0,.3) inset;
-      left: 15px;
-      right: 15px;
-      display: block;
-      @include screen('mobile') {
-        background: $marqueeBg url(../images/alert.png) no-repeat 15px center;
-      }
-    }
+    // &:before{
+    //   content: "";
+    //   height: 60px;
+    //   background: $marqueeBg url(../images/alert.png) no-repeat 30px center;
+    //   border-radius: 3px;
+    //   position: absolute;
+    //   z-index: 9;
+    //   box-shadow: 0 0 3px rgba(0,0,0,.3) inset;
+    //   left: 15px;
+    //   right: 15px;
+    //   display: block;
+    //   @include screen('mobile') {
+    //     background: $marqueeBg url(../images/alert.png) no-repeat 15px center;
+    //   }
+    // }
   }
   ul {
     @include li-reset;
@@ -281,8 +281,8 @@ section{
   .slick-prev,
   .slick-next {
     transition: .3s ease-out;
-    height: 18px;
-    width: 18px;
+    height: 18px!important;
+    width: 18px!important;
     position: absolute;
     right: 10px;
     left:auto;
@@ -308,6 +308,7 @@ section{
   }
   .slick-prev{
     top: 25px;
+    background: none;
     &:before{
       content: "";
       border-left:3px solid #222;
@@ -321,6 +322,7 @@ section{
   }
   .slick-next{
     top: 40px;
+    background: none;
     &:before{
       content: "";
       border-top:3px solid #222;
@@ -1407,9 +1409,11 @@ section{
 
   .slick-prev {
     left: -35px;
+    background: none;
   }
   .slick-next {
     right: -35px;
+    background: none;
   }
   .img-container {
     margin: 0px 15px;

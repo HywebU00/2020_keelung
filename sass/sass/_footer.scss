@@ -3,6 +3,7 @@ footer {
   @include clearfix;
   text-align: left;
   padding: 35px 0;
+
   @include screen('tablet') {
     padding: 15px;
   }
