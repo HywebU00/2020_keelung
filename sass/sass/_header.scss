@@ -275,6 +275,11 @@
         margin: 0px auto;
         transform: scale(.8);
       }
+      ~ .logo__keelung{
+        &:before{
+          display: none;
+        }
+      }
     }
     .logo__keelung{
       font-family: 'Noto Serif TC', serif;
