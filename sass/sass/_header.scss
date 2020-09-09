@@ -252,6 +252,7 @@
     position: relative;
     font-weight: 500;
     z-index: 9;
+    width: 40%;
     @include box-sizing;
     @include screen('mobile') {
       float: none;
@@ -262,22 +263,49 @@
       height: 60px;
     }
     a {
-      display: inline-block;
+      // display: inline-block;
+      display: flex;
+      flex-wrap: wrap;
+      @include screen('mobile') {
+        justify-content: center;
+      }
     }
     img {
-      display: inline-block;
+      width: auto;
       height: 60px;
-      vertical-align: middle;
       @include screen('mobile') {
         width: auto;
-        height: auto;
-        max-height: 40px;
-        margin: 0px auto;
-        transform: scale(.8);
+        height: 40px;
+        margin: 0;
       }
-      ~ .logo__keelung{
+      ~.logo__keelung{
+        padding-left: 10px;
+        align-self: flex-start;
+        margin-top: 4px;
+        @include screen('mobile') {
+          padding-left: 4px;
+          margin-top: 2px;
+        }
         &:before{
           display: none;
+        }
+        ~.logo__dep{
+          align-self: flex-start;
+          margin-top: 4px;
+          margin-left: 0;
+          @include screen('mobile') {
+            margin-top: 2px;
+          }
+        }
+        ~.logo__dep-en{
+          width: auto;
+          margin-top: -25px;
+          margin-left: 58px;
+          @include screen('mobile') {
+            margin-top: -15px;
+            text-align: left;
+            margin-left: -15px;
+          }
         }
       }
     }
@@ -288,11 +316,14 @@
       color: $logoColor;
       font-weight: bold;
       letter-spacing: 2px;
-      line-height: 120%;
       margin-right: -3px;
       padding-left: 15px;
+      line-height: 120%;
       @include screen('mobile') {
         font-size: 1.25em;
+        padding-left: 0;
+        letter-spacing: 1px;
+        font-family: Lato,"PingFang TC","Helvetica Neue",Helvetica,微軟正黑體,Arial,sans-serif;
       }
       &:before {
         content: "";
@@ -313,7 +344,8 @@
       vertical-align: middle;
       color: $navColor;
       letter-spacing: 1px;
-      line-height: 100%;
+      margin-left: 5px;
+      line-height: 120%;
       @include screen('mobile') {
         font-size: 1.25em;
       }
@@ -323,11 +355,12 @@
       color: #444;
       display: block;
       text-align: left;
-      margin-left: 2px;
       padding-left: 15px;
+      width: 100%;
       @include screen('mobile') {
         text-align: center;
         line-height: 140%;
+        padding-left: 0;
       }
     }
 

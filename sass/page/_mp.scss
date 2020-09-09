@@ -242,21 +242,21 @@ section{
   .container{
     @include gutter;
     position: relative;
-    // &:before{
-    //   content: "";
-    //   height: 60px;
-    //   background: $marqueeBg url(../images/alert.png) no-repeat 30px center;
-    //   border-radius: 3px;
-    //   position: absolute;
-    //   z-index: 9;
-    //   box-shadow: 0 0 3px rgba(0,0,0,.3) inset;
-    //   left: 15px;
-    //   right: 15px;
-    //   display: block;
-    //   @include screen('mobile') {
-    //     background: $marqueeBg url(../images/alert.png) no-repeat 15px center;
-    //   }
-    // }
+    &:before{
+      content: "";
+      height: 60px;
+      background: $marqueeBg url(../images/alert.png) no-repeat 30px center;
+      border-radius: 3px;
+      position: absolute;
+      z-index: 9;
+      // box-shadow: 0 0 3px rgba(0,0,0,.3) inset;
+      left: 15px;
+      right: 15px;
+      display: block;
+      @include screen('mobile') {
+        background: $marqueeBg;
+      }
+    }
   }
   ul {
     @include li-reset;
@@ -269,9 +269,10 @@ section{
     font-weight: bold;
     color: $secondaryColor;
     @include text-overflow;
-    padding: 0 2em 0 76px;
+    padding: 0 2.2em 0 76px;
     @include screen('mobile') {
-      padding: 0 2em 0 50px;
+      padding: 0 2em 0 20px;
+      font-size: .9375em;
     }
     &:hover,&:focus{
       text-decoration: underline;
@@ -287,6 +288,7 @@ section{
     right: 10px;
     left:auto;
     z-index: 10;
+    opacity: .5;
     &:before{
       content: "";
       width: 10px;
@@ -304,6 +306,7 @@ section{
       border: none !important;
       outline: none;
       background: none;
+      opacity: 1;
     }
   }
   .slick-prev{
