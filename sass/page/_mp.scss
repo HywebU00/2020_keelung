@@ -1442,15 +1442,16 @@ section{
       padding: 1em;
       display: flex;
       transition: all .5s;
+      justify-content: center;
       &:hover,&:focus{
         color: #fff;
         background: $secondaryColor;
       }
       span{
-        height: 48px;
         overflow: hidden;
         display: block;
         align-self: center;
+        max-height: 48px;
       }
     }
   }

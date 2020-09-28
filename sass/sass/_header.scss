@@ -448,7 +448,7 @@
   padding: 1.5em;
   overflow: hidden;
   position: absolute;
-  background: $primaryColor;
+  background: #444;
   display: none;
   right: 0;
   z-index: 100;
@@ -491,7 +491,7 @@
       border-radius: .1em;
       text-shadow: none;
       width: 49%;
-      background: #444;
+      // background: #444;
       &:hover{
         color: #222;
         background: $thirdColor;
