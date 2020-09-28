@@ -165,12 +165,14 @@
     left: 5px;
     background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat;
     background-size: 80%;
+    background: none;
     z-index: 9;
   }
   .slick-next {
     right: 5px;
     background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat;
     background-size: 80%;
+    background: none;
     z-index: 9;
   }
 }

@@ -65,6 +65,9 @@ html {
   h2.pageTitle{
     font-size: 1.875em;
     line-height: 120%;
+    @include screen("mobile") {
+      margin: 10px 0;
+    }
   }
   .inner_img{
     width: 100%;
