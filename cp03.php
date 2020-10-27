@@ -28,10 +28,10 @@
     <!-- header End -->
     <!-- main Start -->
     <div id="center" class="main innerpage">
-      <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
       <!-- innerimg 內頁上方大圖 -->
       <?php require_once('include/innerimg.html'); ?>
       <div class="container">
+        <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
         <div class="center_block">
           <!-- breadcrumb -->
           <?php require_once('include/breadcrumb.html'); ?>

@@ -28,12 +28,12 @@
     <!-- header End -->
     <!-- main Start -->
     <div id="center" class="main innerpage">
-      <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
       <!-- innerimg 內頁上方大圖 -->
       <div class="inner_img">
         <img src="images/innerimg3.jpg" alt="">
       </div>
       <div class="container">
+        <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
         <?php require_once('include/left_block.html'); ?>
         <div class="center_block">
           <!-- breadcrumb -->

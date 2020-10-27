@@ -59,6 +59,7 @@ html {
   }
 }
 .innerpage{
+  position: relative;
   @include screen('mobile') {
     padding-top: 60px;
   }
@@ -96,6 +97,10 @@ html {
     display: flex;
     @include screen('mobile') {
       display: block;
+    }
+    .accesskey{
+      top: -4px;
+      left: -1rem;
     }
     .inner_info{
       margin-bottom: 1em;

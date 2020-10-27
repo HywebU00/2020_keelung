@@ -887,7 +887,7 @@ section{
           position: relative;
           z-index: 11;
         }
-        &:hover{
+        &:hover,&:focus{
           &:before{
             content: "";
             width: 110%;
