@@ -118,7 +118,7 @@ section{
         }
       }
       @include screen('mobile') {
-        @include aspect-ratio(5, 3); 
+        @include aspect-ratio(5, 2); 
         a .caption{
           height: 2em;
           line-height: 2em;
