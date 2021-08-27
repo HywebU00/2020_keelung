@@ -40,26 +40,26 @@ $(function() {
     ease: 'ease',
     pauseOnHover: false
   });
-    /* The first slide will not get the animation,
-    therefore I add and remove a class that will trigger the css animation */
-    $carousel.find('.slick-current').addClass('start');
-    /* I use a set-timeoutfunction to hinder optimization
-    of adding and removing classes */
-    setTimeout(function() {
-      $carousel.find('.start').removeClass('start');
-    }, 0)
-    $('.c-videos ul').slick({
-      mobileFirst: true,
-      dots: true,
-      arrow: false,
-      infinite: true,
-      speed: 300,
-      autoplay: false,
-      fade: true,
-      lazyLoaded: true,
-      lazyLoad: 'ondemand',
-      ease: 'ease'
-    });
+  /* The first slide will not get the animation,
+  therefore I add and remove a class that will trigger the css animation */
+  $carousel.find('.slick-current').addClass('start');
+  /* I use a set-timeoutfunction to hinder optimization
+  of adding and removing classes */
+  setTimeout(function() {
+    $carousel.find('.start').removeClass('start');
+  }, 0)
+  $('.c-videos ul').slick({
+    mobileFirst: true,
+    dots: true,
+    arrow: false,
+    infinite: true,
+    speed: 300,
+    autoplay: false,
+    fade: true,
+    lazyLoaded: true,
+    lazyLoad: 'ondemand',
+    ease: 'ease'
+  });
   // 廣告輪播
   $('.c-adSlider .container').slick({
     mobileFirst: true,
@@ -143,7 +143,7 @@ $(function() {
     ease: 'ease',
     lazy: true
   });
-  
+
   // cp_photo
   $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
     var i = (currentSlide ? currentSlide : 0) + 1;
@@ -212,7 +212,7 @@ $('.c-marquee ul').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  pauseOnHover: true, 
+  pauseOnHover: true,
   autoplaySpeed: 1500,
   speed: 1000,
   focusOnSelect: true,
@@ -223,13 +223,14 @@ $(".adSearch__btn").click(function(e) {
   e.preventDefault();
 });
 $(".adSearch__form .btn_grp button:last-child").focusout(function(e) {
- $(".adSearch__form").slideUp();
+  $(".adSearch__form").slideUp();
 });
 
-$(function(){
+$(function() {
   $('.left_block nav ul>li>a').each(function() {
     $(".left_block nav ul ul").hide();
     $(".left_block nav ul ul li a.active").parent('li').parent('ul').show();
+
     function leftnav(e) {
       $(this).parent('li').siblings().children('a').removeClass('active');
       $(this).toggleClass('active');
@@ -238,34 +239,53 @@ $(function(){
       e.preventDefault();
     }
     $(this).click(leftnav);
-    $(this).keyup(leftnav); 
+    $(this).keyup(leftnav);
   });
 });
-$(function(){
+$(function() {
   var ww = $(window).outerWidth();
-  if (ww <=768 ) {
+  if (ww <= 768) {
     $(".left_block .left_title").click(function(e) {
-     $(this).next("ul").slideToggle();
-   });
-  } else {
-  }
-});
-$(function(){
-  $('.list__qa>ul>li').each(function() {
-    $(this).find('.list__a').hide();
-    var _qaItem = $(this).children('.list__q').children('a');
-    // var _scrollTop= $(this).offset().top - 55;
-    _qaItem.each(function() {
-      function qa(e){
-        // $('html, body').stop(true, true).animate({ scrollTop: _scrollTop }, 800, 'easeOutExpo');
-        $(this).parents('li').siblings().children('.list__q').children('a').removeClass('active');
-        $(this).toggleClass('active');
-        $(this).parents('li').siblings().children('.list__a').slideUp();
-        $(this).parents('.list__q').next('.list__a').slideToggle();
-        e.preventDefault();
-      }
-      $(this).click(qa);
-      $(this).keyup(qa);
+      $(this).next("ul").slideToggle();
     });
-  });
+  } else {}
+});
+// $(function(){
+//   $('.list__qa>ul>li').each(function() {
+//     $(this).find('.list__a').hide();
+//     var _qaItem = $(this).children('.list__q').children('a');
+//     // var _scrollTop= $(this).offset().top - 55;
+//     _qaItem.each(function() {
+//       function qa(e){
+//         // $('html, body').stop(true, true).animate({ scrollTop: _scrollTop }, 800, 'easeOutExpo');
+//         $(this).parents('li').siblings().children('.list__q').children('a').removeClass('active');
+//         $(this).toggleClass('active');
+//         $(this).parents('li').siblings().children('.list__a').slideUp();
+//         $(this).parents('.list__q').next('.list__a').slideToggle();
+//         e.preventDefault();
+//       }
+//       $(this).click(qa);
+//       $(this).keyup(qa);
+//     });
+//   });
+// });
+
+// 收合
+$(".list__qa li").each(function() {
+  var _question = $(this).children('.list__q').children('a');
+  var _switch = _question.children('.switch');
+  var _answer = $(this).children('.list__a');
+  _answer.hide();
+
+  function accordion(e) {
+    if (_answer.is(':visible')) {
+      _answer.slideUp();
+      _switch.text('展開').removeClass('close');
+    } else {
+      _answer.slideDown();
+      _switch.text('收合').addClass('close');
+    }
+    e.preventDefault();
+  }
+  _question.click(accordion);
 });

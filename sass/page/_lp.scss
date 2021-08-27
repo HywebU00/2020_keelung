@@ -1,35 +1,36 @@
-.adSearch{
-  &.is-b{
-    .form_inline{
+.adSearch {
+  &.is-b {
+    .form_inline {
       display: flex;
       justify-content: space-between;
-      select{
+      select {
         width: 49%;
       }
     }
   }
 }
+
 .lp {
-  padding: 0; 
+  padding: 0;
   line-height: 1.6em;
-  .list__block{
-    a{
+  .list__block {
+    a {
       display: block;
-      position:relative;
+      position: relative;
       height: 100%;
     }
   }
-  .list__pic{
+  .list__pic {
     @include aspect-ratio(4, 3);
     display: block;
-    img{
+    img {
       transform: scale(1);
       transition: all .5s;
     }
   }
-  .list__text{
+  .list__text {
     color: $text-color;
-    a{
+    a {
       display: block;
       position: relative;
       color: $text-color;
@@ -38,11 +39,11 @@
       }
     }
   }
-  .list__title{
+  .list__title {
     color: $text-color;
     display: block;
     font-weight: normal;
-    a{
+    a {
       display: block;
       position: relative;
       color: $text-color;
@@ -59,7 +60,7 @@
   .list__dep {
     font-weight: bold;
     color: $primaryColor;
-    a{
+    a {
       display: block;
       color: $primaryColor;
       padding: 0 6px;
@@ -69,13 +70,14 @@
     }
   }
 }
+
 .lp .list {
   border-top: 4px solid $primaryColor;
-  &>ul, ol {
+  &>ul,
+  ol {
     @include li-reset;
     &>li {
-      position: relative; 
-      
+      position: relative;
       padding: 1em .4em 1em 2.8em;
       border-bottom: 1px solid #DDD;
       .num {
@@ -89,19 +91,19 @@
           display: inline-block;
         }
       }
-      .list__text{
+      .list__text {
         margin-bottom: .5em;
       }
       .list__dep {
         display: inline-block;
         margin-left: .5em;
       }
-
     }
   }
 }
+
 .lp .list__table {
-  th{
+  th {
     border-left: 0;
     border-right: 0;
     border-bottom: 3px solid $primaryColor;
@@ -111,14 +113,14 @@
     border-left: 0;
     border-right: 0;
     &.date {
-      text-align: center; 
+      text-align: center;
       color: #666;
       @include screen('mobile') {
         text-align: left;
       }
     }
-    &.center{
-      text-align: center; 
+    &.center {
+      text-align: center;
     }
     &.num {
       text-align: center;
@@ -127,9 +129,9 @@
         text-align: left;
       }
     }
-    
   }
 }
+
 .lp .list__album.is-a {
   margin: 1em auto;
   ul {
@@ -144,7 +146,7 @@
       @include screen('mobile') {
         width: 48%;
       }
-      @media screen and (max-width:480px){
+      @media screen and (max-width:480px) {
         width: 100%;
       }
       &:last-child:nth-child(3n - 1) {
@@ -164,11 +166,11 @@
         height: 100%;
         margin: 0 auto;
         box-shadow: none;
-        a{
+        a {
           .list__pic {
-            margin-bottom: .5em;   
+            margin-bottom: .5em;
           }
-          .list__text{
+          .list__text {
             padding-left: 14px;
             margin-top: 10px;
             position: relative;
@@ -176,10 +178,10 @@
             @include screen('mobile') {
               padding-left: 0;
             }
-            time{
+            time {
               color: #666;
             }
-            &:after{
+            &:after {
               content: "";
               width: 4px;
               height: 100%;
@@ -192,29 +194,30 @@
                 display: none;
               }
             }
-          } 
-          &:hover,&:focus{
-            &:before{
-              content:"";
-              position:absolute;
+          }
+          &:hover,
+          &:focus {
+            &:before {
+              content: "";
+              position: absolute;
               left: -10px;
               top: -10px;
               right: -10px;
               bottom: -10px;
               z-index: 1;
-              box-shadow: 0px 0px 5px 0 rgba(0,0,0,.5);
+              box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, .5);
             }
-            .list__title{
+            .list__title {
               color: $primaryColor;
             }
           }
-          &:hover{
+          &:hover {
             color: $primaryColor;
-            .list__pic img{
+            .list__pic img {
               transform: scale(1.1);
             }
           }
-          &:focus{
+          &:focus {
             box-shadow: none;
           }
         }
@@ -222,23 +225,24 @@
     }
   }
 }
-.lp .list__album.is-b{
+
+.lp .list__album.is-b {
   border-top: 3px solid $primaryColor;
-  ul{
+  ul {
     @include li-reset;
     display: block;
-    li{
+    li {
       padding: 1em 0;
       border-bottom: 1px solid #DDD;
-      position: relative; 
+      position: relative;
       width: 100%;
-      .list__block{
+      .list__block {
         display: flex;
         @include screen('mobile') {
           display: block;
         }
       }
-      .list__pic{
+      .list__pic {
         width: 200px;
         margin-right: 20px;
         align-self: flex-start;
@@ -249,17 +253,17 @@
           margin-bottom: .5em;
         }
       }
-      .list__text{
+      .list__text {
         display: block;
         @include screen('mobile') {
           margin-top: 10px;
         }
       }
-      .list__title{
+      .list__title {
         font-weight: bold;
         margin-bottom: 5px;
         font-size: 1.125em;
-        a{
+        a {
           color: $secondaryColor;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -270,15 +274,16 @@
             margin-top: 10px;
             display: block;
           }
-          &:hover,&:focus{
+          &:hover,
+          &:focus {
             color: $primaryColor;
           }
         }
       }
-      p{
+      p {
         margin-top: 0;
         margin-bottom: 0;
-        a{
+        a {
           display: block;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -287,127 +292,138 @@
           -webkit-box-orient: vertical;
         }
       }
-      .list__dep{
+      .list__dep {
         display: inline-block;
       }
     }
   }
 }
-.lp .list__qa{
+
+.lp .list__qa {
   overflow: hidden;
-  >ul{
+  >ul {
     @include li-reset;
-    >li{
+    >li {
       margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
-      &:nth-child(even){
-        .question a{
+      &:nth-child(even) {
+        .question a {
           background: #F5F5F5;
         }
       }
     }
   }
-  .list__q{
+  .list__q {
     padding: 0;
     position: relative;
     display: flex;
     width: 100%;
-    a{
+    a {
       width: 100%;
       height: 100%;
       display: flex;
-      &:after{
-        content: "";
-        width: 10px;
-        height: 10px;
-        border-top: 2px solid #5b5b5b;
-        border-left: 2px solid #5b5b5b;
-        transform: rotate(135deg);
-        position: absolute;
-        right: 20px;
-        top: 35px;
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-        margin-top: -10px;
-      }
-      &.active{
-        &:after{
-          transform: rotate(225deg);
-        }
-      }
-      &:focus{
+      &:focus {
         box-shadow: 0 0px 0px 2px $primaryColor inset;
-        .text{
+        .text {
           color: $primaryColor;
         }
       }
+      .switch {
+        position: absolute;
+        right: 0;
+        width: 4.5em;
+        display: flex;
+        align-items: center;
+        height: 62px;
+        &.close {
+          &:after {
+            transform: rotate(225deg);
+            top: 33px;
+          }
+        }
+        &:after {
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-top: 2px solid #5b5b5b;
+          border-left: 2px solid #5b5b5b;
+          transform: rotate(135deg);
+          position: absolute;
+          right: 20px;
+          top: 35px;
+          transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+          margin-top: -10px;
+        }
+      }
     }
-    .num{
+    .num {
       background: $primaryColor;
       color: #fff;
       font-size: 1.375em;
       padding: .8em;
       vertical-align: middle;
-      width: 4em;
+      width: 5em;
       flex-shrink: 0;
       @include screen('mobile') {
-        padding:.5em;
+        padding: .5em;
       }
     }
-    .text{
+    .text {
       font-size: 1.125em;
-      padding: 1em 3em 1em 1em;
+      padding: 1em 5em 1em 1em;
       vertical-align: top;
       color: #444;
       font-weight: bold;
-      img{
+      img {
         vertical-align: text-bottom;
         margin-left: 5px;
       }
     }
   }
-  .list__a{
+  .list__a {
     padding: 10px 20px 20px 20px;
     clear: both;
-    border-top:1px solid #ccc; 
-    .text{
+    border-top: 1px solid #ccc;
+    .text {
       line-height: 160%;
-      p{
+      p {
         margin-top: 10px;
       }
     }
-    .dep{
+    .dep {
       text-align: right;
       color: $primaryColor;
       margin-bottom: 1em;
       margin-right: 10px;
-      &:before{
+      &:before {
         content: "【 ";
       }
-      &:after{
+      &:after {
         content: "】";
       }
     }
-    time{
+    time {
       float: right;
     }
   }
 }
-.lp .list__calendar{
+
+.lp .list__calendar {
   border-top: 3px solid $primaryColor;
-  >ul{
+  >ul {
     @include li-reset;
-    >li{
+    >li {
       padding: 1em 0;
       border-bottom: 1px solid #DDD;
-      a{
+      a {
         display: flex;
         justify-content: flex-start;
         @include screen('mobile') {
           display: block;
         }
       }
-      .calendar__date{
+      .calendar__date {
         align-self: stretch;
         flex-shrink: 0;
         margin-right: 15px;
@@ -418,7 +434,7 @@
         width: 80px;
         font-weight: bold;
         position: relative;
-        &:before{
+        &:before {
           content: "";
           width: 0;
           height: 0;
@@ -435,10 +451,10 @@
           margin-top: 0;
           text-align: left;
           padding-bottom: 6px;
-          border-bottom:3px solid #ccc;
+          border-bottom: 3px solid #ccc;
           margin-bottom: 10px;
         }
-        span{
+        span {
           display: block;
           font-size: 1.75em;
           @include screen('mobile') {
@@ -447,11 +463,11 @@
           }
         }
       }
-      .calendar__info{
-        border-left:3px solid #ccc;
+      .calendar__info {
+        border-left: 3px solid #ccc;
         padding-left: 20px;
         padding-top: 6px;
-        flex:auto;
+        flex: auto;
         position: relative;
         @include screen('mobile') {
           padding-left: 0;
@@ -461,7 +477,7 @@
           margin-bottom: 15px;
           display: block;
         }
-        .calendar__category{
+        .calendar__category {
           display: inline-block;
           background: $secondaryColor;
           color: #fff;
@@ -469,7 +485,7 @@
           margin-bottom: 8px;
           border-radius: 2px;
         }
-        .calendar__title{
+        .calendar__title {
           color: $primaryColor;
           font-weight: bold;
           overflow: hidden;
@@ -480,18 +496,17 @@
           margin-bottom: 5px;
           font-size: 1.125em;
         }
-        ul{
+        ul {
           @include li-reset;
-          color:$text-color;
-          li{
-
-            span{
+          color: $text-color;
+          li {
+            span {
               font-weight: bold;
             }
           }
         }
       }
-      .calendar__pic{
+      .calendar__pic {
         align-self: flex-end;
         flex-shrink: 0;
         margin-left: 20px;
