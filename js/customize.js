@@ -236,7 +236,8 @@ $(function() {
       $(this).toggleClass('active');
       $(this).parent('li').siblings().children('ul').slideUp();
       $(this).next('ul').slideToggle();
-      e.preventDefault();
+      if ($(this).parent().find('ul').length > 0)
+        e.preventDefault();
     }
     $(this).click(leftnav);
     $(this).keyup(leftnav);
