@@ -3,7 +3,6 @@ footer {
   @include clearfix;
   text-align: left;
   padding: 35px 0;
-  
   @include screen('tablet') {
     padding: 15px;
   }
@@ -58,13 +57,13 @@ footer {
         margin: 0px auto;
         transform: scale(.8);
       }
-      ~ .logo__keelung{
-        &:before{
+      ~.logo__keelung {
+        &:before {
           display: none;
         }
       }
     }
-    .logo__keelung{
+    .logo__keelung {
       font-family: 'Noto Serif TC', serif;
       font-size: 1.75em;
       vertical-align: middle;
@@ -128,131 +127,94 @@ footer {
     ul {
       @include li-reset;
       display: inline-block;
-      li{
+      li {
         display: inline-block;
-        a{
+        a {
           width: 40px;
           height: 40px;
           display: block;
-          border:2px solid #fff;
-          &:hover{
+          border: 2px solid #fff;
+          &:hover {
             opacity: .8;
           }
-          &:focus{
-           border:2px solid $footerColor;
-         }
-       }
-     }
-   }
-   .share_fb{
-    background: url(../images/basic/icon_facebook.png) 0 0 no-repeat;
-    background-size: 36px;
-  }
-  .share_yt{
-    background: url(../images/basic/icon_youtube.png) 0 0 no-repeat;
-    background-size: 36px;
-  }
-  .share_line{
-    background: url(../images/basic/icon_line.png) 0 0 no-repeat;
-    background-size: 36px;
-  }
-}
-.footer_info {
-  @include make-xs-column(12);
-  @include make-sm-column(8);
-  @include make-md-column(8);
-  @include make-lg-column(8);
-  @include gutter(0);
-  clear: left;
-  font-size: 0.875em;
-  padding-bottom: 10px;
-  @include screen('mobile') {
-    padding-bottom: 0;
-  }
-  ul.footer_link {
-    @include li-reset();
-    @include clearfix();
-    margin-bottom: 20px;
-    @include screen('mobile') {
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    li {
-      display: inline-block;
-      margin: 0px 5px 5px 0px;
-      a {
-        display: block;
-        padding: 0 1em;
-        line-height: 1.875rem;
-        background: $footerColor;
-        color: #FFF;
-        border-radius: 2px;
-        text-decoration: none;
-        @include transition(all, .3s, ease-out);
-        &:hover,
-        &:focus {
-          background: $primaryColor;
+          &:focus {
+            border: 2px solid $footerColor;
+          }
         }
       }
     }
-  }
-  dl {
-    @include screen('mobile') {
-      text-align: center;
+    .share_fb {
+      background: url(../images/basic/icon_facebook.png) 0 0 no-repeat;
+      background-size: 36px;
     }
-    dt {
-      margin: 0;
-      font-weight: bold;
+    .share_yt {
+      background: url(../images/basic/icon_youtube.png) 0 0 no-repeat;
+      background-size: 36px;
     }
-    dd {
-      margin: 0;
-      span{
-        margin-right: 4px;
-      }
+    .share_line {
+      background: url(../images/basic/icon_line.png) 0 0 no-repeat;
+      background-size: 36px;
     }
   }
-}
-.footer_qrcode {
-  @include make-xs-column(12);
-  @include make-sm-column(4);
-  @include make-md-column(4);
-  @include make-lg-column(4);
-  @include gutter(0);
-  text-align: right;
-  @include screen('mobile') {
-    text-align: center;
-  }
-}
-
-.footer_bottom{
-  font-size: 0.875em;
-  clear: both;
-  border-top: 1px solid #b2b2b2;
-  padding-top: 20px;
-  @include screen('mobile') {
-    text-align: center;
-  }
-  .footer_txt{
+  .footer_info {
     @include make-xs-column(12);
     @include make-sm-column(8);
     @include make-md-column(8);
     @include make-lg-column(8);
     @include gutter(0);
-    .footer_update,.footer_counter,.footer_copyright{
-      em{
-        font-style: normal;
+    clear: left;
+    font-size: 0.875em;
+    padding-bottom: 10px;
+    @include screen('mobile') {
+      padding-bottom: 0;
+    }
+    ul.footer_link {
+      @include li-reset();
+      @include clearfix();
+      margin-bottom: 20px;
+      @include screen('mobile') {
+        margin-bottom: 10px;
+        text-align: center;
       }
-      span{
-        margin-right: 4px;
+      li {
+        display: inline-block;
+        margin: 0px 5px 5px 0px;
+        a {
+          display: block;
+          padding: 0 1em;
+          line-height: 1.875rem;
+          background: $footerColor;
+          color: #FFF;
+          border-radius: 2px;
+          text-decoration: none;
+          @include transition(all, .3s, ease-out);
+          &:hover,
+          &:focus {
+            background: $primaryColor;
+          }
+          &:focus {
+            box-shadow: 0 0 0 2px $thirdColor inset;
+          }
+        }
       }
     }
-    .footer_update{
-      float: left;
-      margin-right: 20px;
+    dl {
+      @include screen('mobile') {
+        text-align: center;
+      }
+      dt {
+        margin: 0;
+        font-weight: bold;
+      }
+      dd {
+        margin: 0;
+        span {
+          margin-right: 4px;
+        }
+      }
     }
   }
-
-  .footer_icon {
+  .footer_qrcode {
     @include make-xs-column(12);
     @include make-sm-column(4);
     @include make-md-column(4);
@@ -262,13 +224,54 @@ footer {
     @include screen('mobile') {
       text-align: center;
     }
-    a {
-      display: inline-block;
-      vertical-align: top;
-      position: relative;
-      border:1px solid #fff;
-      &:hover,&:focus {
-        border:2px solid $footerColor;
+  }
+  .footer_bottom {
+    font-size: 0.875em;
+    clear: both;
+    border-top: 1px solid #b2b2b2;
+    padding-top: 20px;
+    @include screen('mobile') {
+      text-align: center;
+    }
+    .footer_txt {
+      @include make-xs-column(12);
+      @include make-sm-column(8);
+      @include make-md-column(8);
+      @include make-lg-column(8);
+      @include gutter(0);
+      .footer_update,
+      .footer_counter,
+      .footer_copyright {
+        em {
+          font-style: normal;
+        }
+        span {
+          margin-right: 4px;
+        }
+      }
+      .footer_update {
+        float: left;
+        margin-right: 20px;
+      }
+    }
+    .footer_icon {
+      @include make-xs-column(12);
+      @include make-sm-column(4);
+      @include make-md-column(4);
+      @include make-lg-column(4);
+      @include gutter(0);
+      text-align: right;
+      @include screen('mobile') {
+        text-align: center;
+      }
+      a {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        border: 1px solid #fff;
+        &:hover,
+        &:focus {
+          border: 2px solid $footerColor;
           // &:after {
           //   content: "";
           //   width: 100%;

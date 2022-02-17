@@ -11,10 +11,10 @@
     margin: .6em 0;
     padding: .5em 0 .5em;
   }
-  .adSearch{
+  .adSearch {
     float: left;
-    .adSearch__btn{
-      a{
+    .adSearch__btn {
+      a {
         line-height: 40px;
         padding: 0 1em 0 2.5em;
         background: $secondaryColor url(../images/basic/icon_search.png) no-repeat 16px center;
@@ -23,42 +23,44 @@
         display: block;
         border-radius: 3px;
         transition: all .5s;
-        &:hover,&:focus{
+        &:hover {
           background: $primaryColor url(../images/basic/icon_search.png) no-repeat 16px center;
           background-size: 16px;
           box-shadow: none;
         }
+        &:focus {
+          box-shadow: 0 0 0 2px $thirdColor inset;
+        }
       }
     }
-    .adSearch__form{
+    .adSearch__form {
       position: absolute;
       left: 0;
       right: 0;
       top: 56px;
       padding: 1.5em;
       background: #e6e6e6 url(../images/servicebg.jpg) no-repeat center top;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       border-top: 4px solid $primaryColor;
       display: none;
       z-index: 999;
-      .form_grid{
+      .form_grid {
         border-top: 0;
         margin: 0;
         font-size: 1em;
-        .form_grp{
+        .form_grp {
           border-bottom: 1px solid #ccc;
         }
-        .form_title{
+        .form_title {
           padding-top: 10px;
         }
-        .form_content{
+        .form_content {
           text-align: left;
         }
-        .btn_grp{
+        .btn_grp {
           padding-bottom: 0;
         }
-        .btn-submit{
-        }
+        .btn-submit {}
       }
     }
   }
@@ -73,7 +75,7 @@
         height: 60%;
         top: 20%;
         left: 20%;
-        background: url(../images/basic/icon_share.png) no-repeat center center  !important;
+        background: url(../images/basic/icon_share.png) no-repeat center center !important;
         background-size: 16px!important;
         filter: invert(1);
       }
@@ -110,11 +112,13 @@
           background: #474747;
           text-indent: -9999px;
           position: relative;
-          &:hover,
-          &:focus {
+          &:hover {
             background: $primaryColor;
             color: #FFF;
             box-shadow: none;
+          }
+          &:focus {
+            box-shadow: 0 0 0 2px $thirdColor inset;
           }
           &:before {
             content: "";
@@ -155,18 +159,18 @@
     min-width: 100px;
     display: block;
     margin-top: .6em;
-    color:#666;
-    span{
-      font-size:.938em;
+    color: #666;
+    span {
+      font-size: .938em;
       @include screen('mobile') {
-        display:none;
+        display: none;
       }
     }
-    time{
-      font-family:georgia;
-      font-size:1.125em;
+    time {
+      font-family: georgia;
+      font-size: 1.125em;
       @include screen('mobile') {
-        font-size:.938em;
+        font-size: .938em;
       }
     }
     &:before {
@@ -174,7 +178,7 @@
       display: inline-block;
       width: 12px;
       height: 12px;
-      top:.3em;
+      top: .3em;
       background: url(../images/basic/icon_time.png) no-repeat center center;
       background-size: 12px;
     }

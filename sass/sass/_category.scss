@@ -19,27 +19,32 @@
     color: #333;
     background: #f3f3f3;
     @include box-sizing();
-    border-radius:3px;
+    border-radius: 3px;
     transition: all .3s;
-    &:hover,
-    &:focus {
+    &:hover {
       color: #FFF;
       // @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
       background: $secondaryColor;
-      border: 1px solid darken($secondaryColor, 5);    
+      border: 1px solid darken($secondaryColor, 5);
       box-shadow: none;
-
+    }
+    &:focus {
+      box-shadow: 0 0 0 1px $thirdColor inset;
+      border: 1px solid $thirdColor;
     }
     &.active {
       color: #FFF;
       // @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
       border: 1px solid darken($primaryColor, 5);
       background: $primaryColor;
-      &:hover,
-      &:focus {
+      &:hover {
         background: $secondaryColor;
         border: 1px solid darken($secondaryColor, 5);
         box-shadow: none;
+      }
+      &:focus {
+        box-shadow: 0 0 0 1px $thirdColor inset;
+        border: 1px solid $thirdColor;
       }
     }
     span {

@@ -1,18 +1,20 @@
 @charset "utf-8";
 // 文章標題
-h1.title, h2.title {
+h1.title,
+h2.title {
   line-height: 1.25em;
   margin: .4em 0;
 }
+
 .cp {
-  ul,ol{
+  ul,
+  ol {
     margin-bottom: .5em;
   }
-  blockquote{
+  blockquote {
     margin-left: 0;
     margin-right: 0;
   }
-
   .pic {
     float: left;
     margin: 0px 1em 1em 0;
@@ -26,7 +28,7 @@ h1.title, h2.title {
       float: none;
       width: 100%;
       margin: 0;
-      display:block;
+      display: block;
     }
     span {
       text-align: center;
@@ -74,7 +76,7 @@ h1.title, h2.title {
   a {
     @include aSetting;
     text-decoration: underline;
-    &:hover{
+    &:hover {
       text-decoration: none;
     }
   }
@@ -90,7 +92,7 @@ h1.title, h2.title {
       float: none;
       width: 100%;
       margin: 0;
-      display:block;
+      display: block;
     }
     span {
       text-align: center;
@@ -106,33 +108,34 @@ h1.title, h2.title {
       margin-bottom: .5em;
     }
   }
-  .chief_right{
+  .chief_right {
     overflow: hidden;
     width: 70%;
     @include screen('mobile') {
       width: 100%;
     }
-    .chief_title{
+    .chief_title {
       margin-top: 0;
       padding: 20px;
       margin: 0 0 15px;
-      background: #f1f1f1 url(../images/bg.jpg) no-repeat  100px -50px;
-      border-left:4px solid $primaryColor;
+      background: #f1f1f1 url(../images/bg.jpg) no-repeat 100px -50px;
+      border-left: 4px solid $primaryColor;
       @include screen('mobile') {
         padding: 10px 20px;
       }
     }
   }
 }
+
 // 文章標籤
 div.tag {
   @extend %clearfix;
   padding: 0 0 0 1.5em;
   margin-bottom: 1em;
-  position:relative;
+  position: relative;
   &:before {
     display: block;
-    position:absolute;
+    position: absolute;
     left: .1em;
     content: "";
     width: 1em;
@@ -154,15 +157,18 @@ div.tag {
         border-radius: 4px;
         border: 1px solid #DDD;
         padding: .2em .5em;
-        &:hover,&:focus {
-          border:1px solid $aHover;
+        &:hover,
+        &:focus {
+          border: 1px solid $aHover;
         }
       }
     }
   }
 }
 
-.lightbox_slider,.file_download,.web_link{
+.lightbox_slider,
+.file_download,
+.web_link {
   // width: 100%;
   margin: 0 auto 1.5em;
   h3 {
@@ -172,6 +178,7 @@ div.tag {
     border-bottom: 3px solid $primaryColor;
   }
 }
+
 //  slick燈箱
 .lightbox_slider {
   clear: both;
@@ -242,7 +249,6 @@ div.tag {
   }
 }
 
-
 // 檔案下載
 .file_download {
   @include clearfix();
@@ -281,12 +287,13 @@ div.tag {
         margin-right: 0;
         margin-bottom: .2em;
       }
-      a{
+      a {
         margin-right: .5em;
       }
     }
   }
 }
+
 // 外部連結
 .web_link {
   @include clearfix();
@@ -311,7 +318,7 @@ div.tag {
       display: block;
       @include aSetting_nocolor;
       &:before {
-        position: absolute; 
+        position: absolute;
         top: 11px;
         left: 0px;
         text-align: right;
@@ -322,6 +329,7 @@ div.tag {
     }
   }
 }
+
 .publish_info {
   font-size: 0.875em;
   margin: 0 0 2em 0;
@@ -334,17 +342,17 @@ div.tag {
   @include screen('mobile') {
     font-size: 0.938em;
   }
-  ul{
+  ul {
     @include li-reset;
     display: flex;
     justify-content: space-around;
     @include screen('mobile') {
-      flex-wrap:wrap;
+      flex-wrap: wrap;
     }
-    li{
+    li {
       position: relative;
       padding-left: 1em;
-      &:before{
+      &:before {
         content: "";
         width: 2px;
         height: 10px;

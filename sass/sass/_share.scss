@@ -10,8 +10,8 @@
       display: inline-block;
       text-align: left;
       margin: 0px 3px 3px;
-      a{
-        display:block;
+      a {
+        display: block;
         height: 30px;
       }
       @include screen('tablet') {
@@ -26,6 +26,7 @@
     }
   }
 }
+
 // 放進function_panel樣式
 .function_panel {
   .share {
@@ -33,7 +34,7 @@
     text-align: center;
     height: 40px;
     margin: 0;
-    position:relative;
+    position: relative;
     ul {
       display: none;
       position: absolute;
@@ -60,7 +61,8 @@
           padding: 0;
           width: 30px;
           height: 30px;
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             background: transparent;
             img {
               filter: grayscale(1);
@@ -72,16 +74,19 @@
         }
       }
     }
-    a.shareButton{
+    a.shareButton {
       display: block;
       background: $secondaryColor;
       border-radius: 50%;
       width: 40px;
       height: 40px;
       text-align: center;
-      &:hover, &:focus {
+      &:hover {
         background: $primaryColor;
         box-shadow: none;
+      }
+      &:focus {
+        box-shadow: 0 0 0 2px $thirdColor inset;
       }
       img {
         width: 60%;
